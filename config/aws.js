@@ -1,6 +1,6 @@
 export const aws = {
-    accessKeyId: 'AKIAIKGURP6KR5WCODVA',
-    secretAccessKey: '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',
-    Bucket: 'liftdata',
+    accessKeyId: 'AKIAIOC3LA2JJQAUDI4A',
+    secretAccessKey: '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',
+    Bucket: 'onion-test',
     region: 'us-east-2'
 };

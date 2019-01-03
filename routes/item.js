@@ -14,16 +14,16 @@ const PictureItem = require('../models/pictureItem');
 // =========== Answer =============
 
 const s3 = new aws.S3({
-  accessKeyId: 'AKIAIKGURP6KR5WCODVA',
-  secretAccessKey: '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',
-  Bucket: 'liftdata'
+  accessKeyId: 'AKIAIOC3LA2JJQAUDI4A',
+  secretAccessKey: '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',
+  Bucket: 'onion-test'
   // region: 'us-east-2'
 });
 
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'liftdata',
+    bucket: 'onion-test',
     acl: 'public-read',
     metadata: function (req, file, cb) {
       cb(null, { fieldName: file.fieldname });
@@ -33,7 +33,7 @@ const upload = multer({
       cb(null, Date.now().toString() + "_" + file.originalname);
     }
   }),
-  limits: { fieldSize: 25 * 1024 * 1024 } 
+  limits: { fieldSize: 1000 * 1024 * 1024 } 
 });
 
 router.post('/add_item', upload.single('file'), (req, res, next) => {
